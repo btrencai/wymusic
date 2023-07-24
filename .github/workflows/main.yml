@@ -3,8 +3,7 @@ name: 网易云音乐日推自动创建歌单
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '30 * * * *'
-    
+    - cron:  '0 0/3 * * *'
   workflow_dispatch:
 
 jobs:
@@ -30,8 +29,9 @@ jobs:
     - name: 设置api
       run: echo "api='http://127.0.0.1:3000'" >> NeteaseCloudMusicDay/config.py
     - name: 设置网易云音乐登录账号
-      run: echo "phone='5143611750'" >> NeteaseCloudMusicDay/config.py
+      run: echo "phone='13857233146'" >> NeteaseCloudMusicDay/config.py
     - name: 设置网易云音乐登录密码
       run: echo "password='123zzmzz'" >> NeteaseCloudMusicDay/config.py
     - name: 运行脚本
       run: python3 NeteaseCloudMusicDay/main2.py
+
